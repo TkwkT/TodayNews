@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener"/>
+        
+        <variable
+            name="viewmodel"
+            type="com.example.todaynews.viewModel.TopViewModel"/>
+    </data>
+    
+    <RelativeLayout
+        android:id="@+id/pager_item_layout"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:background="#FFFFFF"
+        android:onClick="@{clickListener}">
+        
+        <ImageView
+            android:id="@+id/pager_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:imageFromUrl="@{viewmodel.image}"/>
+        
+        <TextView
+            android:id="@+id/pager_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="28dp"
+            android:text="@{viewmodel.title}"
+            android:textSize="20sp"
+            android:textColor="@color/text_white"/>
+    
+    </RelativeLayout>
+
+</layout>
+
+
